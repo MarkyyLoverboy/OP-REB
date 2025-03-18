@@ -1,3 +1,30 @@
+if _G.MainScriptLoaded then
+    warn("Main script already loaded. Preventing duplicate execution.")
+    return
+end
+_G.MainScriptLoaded = true
+
+local whitelist = { 2783179363, 1992531036, 781799822, 2815154822 } 
+
+local player = game.Players.LocalPlayer
+local playerId = player.UserId
+
+print("👤 Player ID detected:", playerId)
+
+local isWhitelisted = false
+for _, id in ipairs(whitelist) do
+    if id == playerId then
+        isWhitelisted = true
+        break
+    end
+end
+
+if not isWhitelisted then
+    warn("❌ Access denied for ID:", playerId)
+    player:Kick("KUPAL KA BA BOSS?!")
+    return
+end
+
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
@@ -125,6 +152,35 @@ Tabs.Settings:AddButton({
             })
         end
     })
+    
+Tabs.Settings:AddButton({
+        Title = "Hide All Frames",
+        Description = "Less Lag",
+        Callback = function()
+            Window:Dialog({
+                Title = "Less Lag",
+                Content = "No Frame Drops",
+                Buttons = {
+                    {
+                        Title = "Confirm",
+                        Callback = function()
+				local rSto = game:GetService("ReplicatedStorage")
+		for _, obj in pairs(rSto:GetChildren()) do
+			if obj.Name:match("Frame$") then
+				obj.Visible = not Value
+			end
+},
+{
+			Title = "Cancel",
+                        Callback = function()
+                            print("Cancelled the dialog.")
+                        end
+                    }
+                }
+            })
+        end
+    })
+
 Tabs.Main:AddButton({
         Title = "Speed Grind",
         Description = " Super Speed (With Swifts)",
