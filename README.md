@@ -105,25 +105,6 @@ Tabs.Settings:AddButton({
 				obj.Visible = not Value
 			end
 		end
-	end
-			for _, v in pairs(game:GetDescendants()) do
-			if v:IsA("ParticleEmitter") or v:IsA("Trail") or v:IsA("Smoke") or v:IsA("Fire") or v:IsA("Sparkles") then
-				v.Enabled = false
-			end
-		end
-		local lighting = game:GetService("Lighting")
-		lighting.GlobalShadows = false
-		lighting.FogEnd = 9e9
-		for _, v in pairs(workspace:GetDescendants()) do
-			if v:IsA("BasePart") and not v.Parent:FindFirstChild("Humanoid") then
-				v.Material = Enum.Material.SmoothPlastic
-				if v:IsA("Texture") then
-					v:Destroy()
-				end
-			end
-		end
-		settings().Rendering.QualityLevel = 1
-	end
 },
 {
                         Title = "Cancel",
