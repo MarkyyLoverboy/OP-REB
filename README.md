@@ -4,7 +4,7 @@ if _G.MainScriptLoaded then
 end
 _G.MainScriptLoaded = true
 local Players = game:GetService("Players")
-local whitelist = { 2783179363, 1992531036, 781799822, 2815154822 } 
+local whitelist = { 1992531036, 2783179363, 1992531036, 781799822, 2815154822 } 
 
 local player = game.Players.LocalPlayer
 local playerId = player.UserId
@@ -75,7 +75,7 @@ do
                         Title = "Confirm",
                         Callback = function()
 				local Players = game:GetService("Players")
-local whitelist = { 2664725473, 2815154822 } 
+local whitelist = { 1992531036, 2664725473, 2815154822 } 
 
 local player = game.Players.LocalPlayer
 local playerId = player.UserId
@@ -163,7 +163,7 @@ Tabs.Main:AddButton({
                         Title = "Confirm",
                         Callback = function()
 							local Players = game:GetService("Players")
-local whitelist = { 2664725473, 2815154822 } 
+local whitelist = { 1992531036, 2664725473, 2815154822 } 
 
 local player = game.Players.LocalPlayer
 local playerId = player.UserId
@@ -233,7 +233,7 @@ end)
                         Title = "Confirm",
                         Callback = function()
 							local Players = game:GetService("Players")
-local whitelist = { 2664725473, 2815154822 } 
+local whitelist = { 1992531036, 2664725473, 2815154822 } 
 
 local player = game.Players.LocalPlayer
 local playerId = player.UserId
