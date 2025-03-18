@@ -246,18 +246,18 @@ local a=game:GetService("ReplicatedStorage")local b=game:GetService("Players")lo
         end
     })
 
- Tabs.Main:AddButton({
-        Title = "Protein Egg",
-        Description = "Auto Eat every last 15 secs",
+Tabs.Settings:AddButton({
+        Title = "Auto Protein Egg",
+        Description = "Auto eat egg every last 15 secs",
         Callback = function()
             Window:Dialog({
-                Title = "Auto Protein Egg",
-                Content = "EGG",
+                Title = "Auto Egg",
+                Content = "Eat Egg",
                 Buttons = {
                     {
                         Title = "Confirm",
                         Callback = function()
-local LocalPlayer = game:GetService("Players").LocalPlayer local muscleEvent = LocalPlayer:WaitForChild("muscleEvent") while true do wait(1800) muscleEvent:FireServer("proteinEgg", LocalPlayer.Backpack:FindFirstChild("Protein Egg"))end
+local LocalPlayer = game:GetService("Players").LocalPlayer local muscleEvent = LocalPlayer:WaitForChild("muscleEvent") while true do wait(1800) muscleEvent:FireServer("proteinEgg", LocalPlayer.Backpack:FindFirstChild("Protein Egg")) end
 		    end
                     },
                     {
