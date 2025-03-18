@@ -66,7 +66,7 @@ end
 
 if not isWhitelisted then
     warn("Access denied for ID:", playerId)
-    player:Kick("Kupal ka ngani")
+    player:Kick("KUPAL KA BA BOSS?!")
     return
 end
 
@@ -154,7 +154,7 @@ end
 
 if not isWhitelisted then
     warn("❌ Access denied for ID:", playerId)
-    player:Kick("Kupal ka ngani")
+    player:Kick("KUPAL KA BA BOSS?!")
     return
 end
 
@@ -201,7 +201,7 @@ end)
         Callback = function()
             Window:Dialog({
                 Title = "8 PACKS FAST REB",
-                Content = "FASTEST REBIRT",
+                Content = "FASTEST REBIRTH",
                 Buttons = {
                     {
                         Title = "Confirm",
@@ -224,7 +224,7 @@ end
 
 if not isWhitelisted then
     warn("❌ Access denied for ID:", playerId)
-    player:Kick("Kupal ka ngani")
+    player:Kick("KUPAL KA BA BOSS?!")
     return
 end
                             
