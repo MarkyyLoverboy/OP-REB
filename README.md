@@ -63,7 +63,36 @@ do
     })
  
 
- 
+ 	Tabs.Main:AddButton({
+        Title = "Low FPS and Low GRAPHICS",
+        Description = "Less LAG",
+        Callback = function()
+            Window:Dialog({
+                Title = "FPS and GRAPHICS",
+                Content = "Set to Low",
+                Buttons = {
+                    {
+                        Title = "Confirm",
+			Default = false,
+                        Callback = function()
+				local rSto = game:GetService("ReplicatedStorage")
+		for _, obj in pairs(rSto:GetChildren()) do
+			if obj.Name:match("Frame$") then
+				obj.Visible = not Value
+			end
+		end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                            print("Cancelled the dialog.")
+                        end
+                    }
+                }
+            })
+        end
+    })
+  
 	Tabs.Main:AddButton({
         Title = "Fast Rebirths With Glitches",
         Description = "Equips Neon Guardians then equips Tribal Overlords",
