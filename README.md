@@ -106,7 +106,6 @@ Tabs.Settings:AddButton({
 			end
 		end
 	end
-})
 			for _, v in pairs(game:GetDescendants()) do
 			if v:IsA("ParticleEmitter") or v:IsA("Trail") or v:IsA("Smoke") or v:IsA("Fire") or v:IsA("Sparkles") then
 				v.Enabled = false
