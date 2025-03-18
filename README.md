@@ -4,7 +4,7 @@ if _G.MainScriptLoaded then
 end
 _G.MainScriptLoaded = true
 local Players = game:GetService("Players")
-local whitelist = { 1992531036, 2783179363, 1992531036, 2895004858, 2815154822 } 
+local whitelist = { 2664725473, 1992531036, 2783179363, 1992531036, 2895004858, 2815154822 } 
 
 local player = game.Players.LocalPlayer
 local playerId = player.UserId
