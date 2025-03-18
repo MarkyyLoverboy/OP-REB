@@ -257,35 +257,15 @@ Tabs.Settings:AddButton({
                     {
                         Title = "Confirm",
                         Callback = function()
-local function useOneEgg()
-	local protein = game.Players.LocalPlayer.Backpack:FindFirstChild("Protein Egg")
-	if protein then
-		protein.Parent = game.Players.LocalPlayer.Character
-		task.wait(0.1)
-		local virtualInput = game:GetService("VirtualInputManager")
-		virtualInput:SendMouseButtonEvent(0, 0, 0, true, game, 1)
-		task.wait(0.5)
-		virtualInput:SendMouseButtonEvent(0, 0, 0, false, game, 1)
-		return true
-	end
-	return false
-end
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local muscleEvent = LocalPlayer:WaitForChild("muscleEvent")
 
-local function checkEggTimer()
-	local boostFolder = game.Players.LocalPlayer:FindFirstChild("boostTimersFolder")
-	if not boostFolder then
-		return false
-	end
-	local eggTimer = boostFolder:FindFirstChild("Protein Egg")
-	if not eggTimer then
-		return useOneEgg()
-	end
-	if tonumber(eggTimer.Value) <= 25 then
-		return useOneEgg()
-	end
-	return true
+while true do
+    wait(1800) 
+
+
+muscleEvent:FireServer("proteinEgg", LocalPlayer.Backpack:FindFirstChild("Protein Egg"))
 end
-		    end
                     },
                     {
                         Title = "Cancel",
