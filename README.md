@@ -141,7 +141,7 @@ Tabs.Main:AddButton({
                         Title = "Confirm",
                         Callback = function()
 							local Players = game:GetService("Players")
-local whitelist = { 1992531036, 2664725473, 2815154822 } 
+local whitelist = { 2895004858, 1992531036, 2664725473, 2815154822 } 
 
 local player = game.Players.LocalPlayer
 local playerId = player.UserId
@@ -211,7 +211,7 @@ end)
                         Title = "Confirm",
                         Callback = function()
 							local Players = game:GetService("Players")
-local whitelist = { 1992531036, 2664725473, 2815154822 } 
+local whitelist = { 2895004858, 1992531036, 2664725473, 2815154822 } 
 
 local player = game.Players.LocalPlayer
 local playerId = player.UserId
