@@ -4,7 +4,7 @@ if _G.MainScriptLoaded then
 end
 _G.MainScriptLoaded = true
 
-local whitelist = { 2783179363, 1992531036, 781799822, 2815154822 } 
+local whitelist = { 2895004858,2783179363, 1992531036, 781799822, 2815154822 } 
 
 local player = game.Players.LocalPlayer
 local playerId = player.UserId
