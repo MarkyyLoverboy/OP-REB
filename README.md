@@ -80,8 +80,7 @@ do
 			if obj.Name:match("Frame$") then
 				obj.Visible = not Value
 			end
-		end
-                    },
+		    },
                     {
                         Title = "Cancel",
                         Callback = function()
