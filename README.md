@@ -88,7 +88,7 @@ Tabs.Main:AddParagraph({
         end
     })
  
-Tabs.Settings:AddButton({
+abs.Settings:AddButton({
         Title = "Hide All Frames",
         Description = "Less Lag",
         Callback = function()
@@ -99,12 +99,24 @@ Tabs.Settings:AddButton({
                     {
                         Title = "Confirm",
                         Callback = function()
-  				local rSto = game:GetService("ReplicatedStorage")
-		for _, obj in pairs(rSto:GetChildren()) do
-			if obj.Name:match("Frame$") then
-				obj.Visible = not Value
+  				for _, v in pairs(game:GetDescendants()) do
+			if v:IsA("ParticleEmitter") or v:IsA("Trail") or v:IsA("Smoke") or v:IsA("Fire") or v:IsA("Sparkles") then
+				v.Enabled = false
 			end
 		end
+		local lighting = game:GetService("Lighting")
+		lighting.GlobalShadows = false
+		lighting.FogEnd = 9e9
+		for _, v in pairs(workspace:GetDescendants()) do
+			if v:IsA("BasePart") and not v.Parent:FindFirstChild("Humanoid") then
+				v.Material = Enum.Material.SmoothPlastic
+				if v:IsA("Texture") then
+					v:Destroy()
+				end
+			end
+		end
+		settings().Rendering.QualityLevel = 1
+	end
 },
 {
                         Title = "Cancel",
