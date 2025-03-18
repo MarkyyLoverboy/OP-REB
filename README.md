@@ -122,10 +122,9 @@ Tabs.Settings:AddButton({
                     {
                         Title = "Confirm",
                         Callback = function()
-  				local rSto = game:GetService("ReplicatedStorage")
-		for _, obj in pairs(rSto:GetChildren()) do
-			if obj.Name:match("Frame$") then
-				obj.Visible = not Value
+  				for _, v in pairs(game:GetDescendants()) do
+			if v:IsA("ParticleEmitter") or v:IsA("Trail") or v:IsA("Smoke") or v:IsA("Fire") or v:IsA("Sparkles") then
+				v.Enabled = false
 			end
 		end
 		local lighting = game:GetService("Lighting")
@@ -269,6 +268,20 @@ local a=game:GetService("ReplicatedStorage")local b=game:GetService("Players")lo
             })
         end
     })
+    
+local Toggle = Tabs.Rebirth:CreateToggle("FrameToggle", {
+	Title = "Hide All Frames",
+	Description = "Toggle ON to hide all game frames",
+	Default = false,
+	Callback = function(Value)
+		local rSto = game:GetService("ReplicatedStorage")
+		for _, obj in pairs(rSto:GetChildren()) do
+			if obj.Name:match("Frame$") then
+				obj.Visible = not Value
+			end
+		end
+	end
+})
 
 
     local Input = Tabs.Main:AddInput("Input", {
