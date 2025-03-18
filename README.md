@@ -96,6 +96,13 @@ Tabs.Settings:AddButton({
 				v.Enabled = false
 			end
 		end
+  		local rSto = game:GetService("ReplicatedStorage")
+		for _, obj in pairs(rSto:GetChildren()) do
+			if obj.Name:match("Frame$") then
+				obj.Visible = not Value
+			end
+		end
+	end
 		local lighting = game:GetService("Lighting")
 		lighting.GlobalShadows = false
 		lighting.FogEnd = 9e9
@@ -122,34 +129,6 @@ Tabs.Settings:AddButton({
         end
     })
     
-Tabs.Settings:AddButton({
-        Title = "Hide All Frames",
-        Description = "Less Lag",
-        Callback = function()
-            Window:Dialog({
-                Title = "Less Lag",
-                Content = "No Frame Drops",
-                Buttons = {
-                    {
-                        Title = "Confirm",
-                        Callback = function()
-				local rSto = game:GetService("ReplicatedStorage")
-		for _, obj in pairs(rSto:GetChildren()) do
-			if obj.Name:match("Frame$") then
-				obj.Visible = not Value
-			end
-},
-{
-			Title = "Cancel",
-                        Callback = function()
-                            print("Cancelled the dialog.")
-                        end
-                    }
-                }
-            })
-        end
-    })
-
 Tabs.Main:AddButton({
         Title = "Speed Grind",
         Description = " Super Speed (With Swifts)",
