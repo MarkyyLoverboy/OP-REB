@@ -4,7 +4,7 @@ if _G.MainScriptLoaded then
 end
 _G.MainScriptLoaded = true
 local Players = game:GetService("Players")
-local whitelist = { 2664725473, 1992531036, 2783179363, 1992531036, 2895004858, 2815154822 } 
+local whitelist = { 1992531036, 2783179363, 1992531036, 2895004858, 2815154822 } 
 
 local player = game.Players.LocalPlayer
 local playerId = player.UserId
@@ -88,7 +88,7 @@ Tabs.Main:AddParagraph({
         end
     })
  
-abs.Settings:AddButton({
+Tabs.Settings:AddButton({
         Title = "Hide All Frames",
         Description = "Less Lag",
         Callback = function()
@@ -246,26 +246,41 @@ local a=game:GetService("ReplicatedStorage")local b=game:GetService("Players")lo
         end
     })
 
-Tabs.Settings:AddButton({
-        Title = "Auto Protein Egg",
-        Description = "Auto eat egg every last 15 secs",
+ Tabs.Main:AddButton({
+        Title = "Protein Egg",
+        Description = "Auto Eat every last 15 secs",
         Callback = function()
             Window:Dialog({
-                Title = "Auto Egg",
-                Content = "Eat Egg",
+                Title = "Auto Protein Egg",
+                Content = "EGG",
                 Buttons = {
                     {
                         Title = "Confirm",
                         Callback = function()
-local LocalPlayer = game:GetService("Players").LocalPlayer
-local muscleEvent = LocalPlayer:WaitForChild("muscleEvent")
+				local Players = game:GetService("Players")
+local whitelist = { 1992531036, 2664725473, 2815154822 } 
 
-while true do
-    wait(1800) 
+local player = game.Players.LocalPlayer
+local playerId = player.UserId
 
+print("👤 Player ID detected:", playerId)
 
-muscleEvent:FireServer("proteinEgg", LocalPlayer.Backpack:FindFirstChild("Protein Egg"))
+local isWhitelisted = false
+for _, id in ipairs(whitelist) do
+    if id == playerId then
+        isWhitelisted = true
+        break
+    end
 end
+
+if not isWhitelisted then
+    warn("Access denied for ID:", playerId)
+    player:Kick("KUPAL KA BA BOSS?!")
+    return
+end
+
+local LocalPlayer = game:GetService("Players").LocalPlayer local muscleEvent = LocalPlayer:WaitForChild("muscleEvent") while true do wait(1800) muscleEvent:FireServer("proteinEgg", LocalPlayer.Backpack:FindFirstChild("Protein Egg")) end
+		    end
                     },
                     {
                         Title = "Cancel",
