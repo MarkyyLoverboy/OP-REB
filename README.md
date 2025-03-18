@@ -35,7 +35,7 @@ do
         Content = "KYY ON TOP"
     })
  
- 
+
  
 	Tabs.Main:AddButton({
         Title = "Fast Rebirths With Glitches",
@@ -48,7 +48,7 @@ do
                     {
                         Title = "Confirm",
                         Callback = function()
-							local Players = game:GetService("Players")
+				local Players = game:GetService("Players")
 local whitelist = { 2664725473, 2815154822 } 
 
 local player = game.Players.LocalPlayer
@@ -106,7 +106,6 @@ Tabs.Settings:AddButton({
 				obj.Visible = not Value
 			end
 		end
-	end
 		local lighting = game:GetService("Lighting")
 		lighting.GlobalShadows = false
 		lighting.FogEnd = 9e9
@@ -122,7 +121,6 @@ Tabs.Settings:AddButton({
 	end
 },
 {
-
                         Title = "Cancel",
                         Callback = function()
                             print("Cancelled the dialog.")
