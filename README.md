@@ -1,4 +1,4 @@
-README.mdif _G.MainScriptLoaded then
+if _G.MainScriptLoaded then
     warn("🚫 Main script already loaded. Preventing duplicate execution.")
     return
 end
